@@ -255,11 +255,12 @@ defmodule Ecto.Type do
 
   This callback is called on external input and can return any type,
   as long as the `dump/1` function is able to convert the returned
-  value into an Ecto native type. There are two situations where
+  value into an Ecto native type. There are three situations where
   this callback is called:
 
     1. When casting values by `Ecto.Changeset`
     2. When passing arguments to `Ecto.Query`
+    3. When loading values from an embedded schema
 
   You can return `:error` if the given term cannot be cast.
   A default error message of "is invalid" will be added to the
